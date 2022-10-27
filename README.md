@@ -21,10 +21,10 @@
 
 ## Data
 The datasets were saved in the /data folder. The original raw data can be found here:\
-http://api.bitcoincharts.com/v1/csv/.\
+http://api.bitcoincharts.com/v1/csv/  \
 The datasets from this site have three attributes:
 1. Time in epoch,
-2. Price in USD per bitcoin, and
+2. Price in USD per bitcoin
 3. Bitcoin amount in a transaction (buy/sell).
 
 However, only the first two attributes were relevant to this project.
