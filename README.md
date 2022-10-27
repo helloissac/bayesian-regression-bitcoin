@@ -23,13 +23,12 @@
 The datasets were saved in the /data folder. The original raw data can be found here:\
 http://api.bitcoincharts.com/v1/csv/.\
 The datasets from this site have three attributes:
-- (1) Time in epoch,
-- (2) Price in USD per bitcoin, and
-- (3) Bitcoin amount in a transaction (buy/sell).
+1. Time in epoch,
+2. Price in USD per bitcoin, and
+3. Bitcoin amount in a transaction (buy/sell).
 
 However, only the first two attributes were relevant to this project.
 
 - To make the data to have evenly space records, all the records were taken within a 20 second window and replaced it by a single record as the average of all the transaction prices in that window. Not every 20 second window had a record; therefore those missing entries were filled using the prices of the previous 20 observations and assuming a Gaussian distribution. The raw data that has been cleaned was given in the file dataset.csv.
 
 - Finally, the data was divided into a total of 9 different datasets. The whole dataset was partitioned into three equally sized (50 price variations in each) subsets: train1, train2, and test. The train sets were used for training a linear model, while the test set was for evaluation of the model. There were three csv files associated with each subset of data: *_90.csv, *_180.csv, and *_360.csv. In _90.csv, for example, each line represented a vector of length 90 where the elements are 30 minute worth of bitcoin price variations as there were 20 second intervals and a price variation in the 91st column. Similarly, the *_180.csv represented 60 minutes of prices and *_360.csv represented 120 minutes of prices.
- 
