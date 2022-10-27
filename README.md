@@ -8,7 +8,7 @@
 - To make these predictions, a machine learning technique - Bayesian regression was implemented in Python.
 
 ## Logic 
-1. Compute the price variations (Δp<sub>1</sub>, Δp<sub>2</sub>, and Δp<sub>3</sub>) for train2 using train1 as input to the Bayesian regression equation. Make sure to use the similarity metric in place of the Euclidean distance in Bayesian regression. If the ratio is > 1, declare y = 1, else declare y = 0. In general, to estimate the conditional expectation of y, given observation x, the estimation is produced as below.
+1. Compute the price variations (Δp<sub>1</sub>, Δp<sub>2</sub>, and Δp<sub>3</sub>) for train2 using train1 as input to the Bayesian regression equation. Make sure to use the similarity metric in place of the Euclidean distance in Bayesian regression. If the ratio is > 1, declare y = 1, else declare y = 0. In general, to estimate the conditional expectation of y, given observation x, the equation is produced as below.
 <center>
   <img src="https://github.com/issacjohannli/bayesian-regression-bitcoin/blob/main/equations/equation-1.png" width="950" height="200">
 </center>
@@ -16,15 +16,15 @@
 <center>
   <img src="https://github.com/issacjohannli/bayesian-regression-bitcoin/blob/main/equations/equation-2.png" width="950" height="200">
 </center>
-3. Use the linear regression model computed in Step 2 and Bayesian regression estimates, to predict the price variations for the test dataset. Bayesian regression estimates for test dataset are computed in the same way as they are computed for train2 dataset – using train1 as an input.
-4. Once the price variations are predicted, compute the mean squared error (MSE) for the test dataset (the test dataset has 50 vectors => 50 predictions).
+3. Use the linear regression model computed in Step 2 and Bayesian regression estimates to predict the price variations for the test dataset. Bayesian regression estimates for test dataset were computed in the same way as they are computed for train2 dataset – using train1 as an input.
+4. Once the price variations were predicted, compute the mean squared error (MSE) for the test dataset (the test dataset has 50 vectors => 50 predictions).
 
 ## Data
 The datasets were saved in the /data folder. The original raw data can be found here:\
 http://api.bitcoincharts.com/v1/csv/  \
 The datasets from this site have three attributes:
 1. Time in epoch,
-2. Price in USD per bitcoin
+2. Price in USD per bitcoin,
 3. Bitcoin amount in a transaction (buy/sell).
 
 However, only the first two attributes were relevant to this project.
